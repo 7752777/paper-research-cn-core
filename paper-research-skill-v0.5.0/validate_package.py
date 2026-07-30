@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import py_compile
 import re
 from pathlib import Path
 
@@ -39,9 +38,9 @@ def validate_package(root: Path) -> list[str]:
             errors.append(f"SKILL-LINK-001 missing {reference}")
     for path in skill_root.rglob("*.py"):
         try:
-            py_compile.compile(str(path), doraise=True)
-        except py_compile.PyCompileError as error:
-            errors.append(f"SKILL-PY-001 {path.relative_to(root)}: {error.msg}")
+            compile(path.read_text(encoding="utf-8"), str(path), "exec")
+        except (SyntaxError, UnicodeDecodeError, ValueError) as error:
+            errors.append(f"SKILL-PY-001 {path.relative_to(root)}: {getattr(error, 'msg', str(error))}")
     return errors
 
 
