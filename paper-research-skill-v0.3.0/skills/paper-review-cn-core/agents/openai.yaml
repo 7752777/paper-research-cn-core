@@ -1,0 +1,4 @@
+interface:
+  display_name: "中文核心三轮审稿"
+  short_description: "面向中文核心投稿的独立三轮审稿、修订矩阵与去工程化复核。"
+  default_prompt: "使用 $paper-review-cn-core 对我的中文论文做三轮独立审稿，给出修订矩阵，保护主体贡献，避免把论文改成通篇道歉和局限承认。"

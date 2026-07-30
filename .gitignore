@@ -1,0 +1,28 @@
+# Python/runtime noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+node_modules/
+
+# Local/editor/system files
+.env
+.env.*
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# The public mirror is workflow-only, not a paper-materials repository.
+*.pdf
+*.caj
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+*.zip
+*.rar
+*.7z

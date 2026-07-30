@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-07-30T19:14:33",
+  "source_commit": "fed8d2cac75125d9711d225a2dcf147267302d28",
+  "allowlist_dirs": [
+    "paper-research-skill-v0.3.0"
+  ],
+  "generated_files": [
+    ".editorconfig",
+    ".gitignore",
+    "PUBLIC_RELEASE_POLICY.md",
+    "README.md",
+    "SYNC_FROM_PRIVATE.md",
+    "docs/LOCAL_USAGE.md",
+    "docs/MAINTAINER_GUIDE.md",
+    "docs/SKILLS_AND_AGENTS.md",
+    "scripts/install_skills.ps1",
+    "scripts/privacy_scan.py",
+    "scripts/release_gate.py",
+    "scripts/verify_public_release.py"
+  ],
+  "excluded_names": [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "node_modules"
+  ],
+  "excluded_suffixes": [
+    ".log",
+    ".pyc",
+    ".pyo",
+    ".tmp"
+  ],
+  "policy_version": "public-skill-only-v3",
+  "policy": "Skill/workflow only; no private papers, full texts, submissions, credentials, local paths, archives, or personal memory."
+}
