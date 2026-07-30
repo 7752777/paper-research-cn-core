@@ -1,13 +1,17 @@
 # Skills And Agents
 
-本仓库公开两个 skill 和两个 agent 描述。agent 描述不含私人论文材料，只提供显示名称、简短说明和默认启动提示。
+本仓库公开六个可组合的 4.0 skill。它们不含私人论文材料、全文或审稿记录，只提供可复用 workflow、脚本与合成 fixture。
 
 ## Skill Reference
 
 | 名称 | 触发场景 | 主要产出 |
 | --- | --- | --- |
-| `paper-research-cn-core` | 选题、CNKI 检索规划、文献台账、项目结构整理、研究设计、论文写作、投稿前审计、公开发布审计、本地记忆更新 | 检索协议、下载清单、证据台账、结构整理清单、研究设计、论文草稿、去工程化审计、发布 gate 报告 |
-| `paper-review-cn-core` | 已有文稿后的独立审稿、投稿前复核、重大修改后复审 | 三轮审稿意见、严重度分级、修订矩阵、贡献保护检查 |
+| `paper-research-cn-core` | 选题、CNKI 检索规划、分层文献台账与研究证据 | 检索协议、证据台账、纳排与分层审计 |
+| `paper-manuscript-cn-core` | 中文核心文稿撰写、版式与渲染检查 | 文稿、`doc.json`、Word/PDF 渲染记录 |
+| `paper-figures-cn-core` | 图表、题注、分母和多重编码限制核验 | 图表清单、题注审计、适配报告 |
+| `paper-references-cn-core` | GB/T 7714 与期刊/DOI 官方元数据核验 | 参考文献表、元数据核验结果 |
+| `paper-review-cn-core` | 三轮中文独立审稿、重大修改后复审 | 审稿意见、严重度分级、修订矩阵 |
+| `paper-submission-cn-core` | 投稿终审、结构化审计聚合与发布门禁 | 门禁报告、阻断项和可追溯修复建议 |
 
 ## 推荐协作方式
 

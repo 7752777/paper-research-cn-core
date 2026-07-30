@@ -1,4 +1,0 @@
-interface:
-  display_name: "中文核心论文写作流水线"
-  short_description: "CNKI 优先的中文核心论文研究、证据整理、项目归位、写作、记忆进化与投稿审计流水线。"
-  default_prompt: "使用 $paper-research-cn-core 帮我从选题、CNKI 检索规划、文献台账、项目结构整理、研究设计、分析到中文核心期刊文稿写作完成一篇论文，并在每个阶段做证据 gate、结构 checkpoint 和去工程化审计。"

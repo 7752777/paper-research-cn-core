@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+import json
 import re
-import sys
 from pathlib import Path
 
 
@@ -19,27 +19,29 @@ SECRET_PATTERNS = [
 ]
 
 
+def finding(rule_id: str, severity: str, file: str, evidence: str, remediation: str) -> dict[str, str]:
+    return {"rule_id": rule_id, "severity": severity, "file": file, "evidence": evidence, "remediation": remediation}
+
+
 def main() -> int:
-    errors: list[str] = []
+    findings: list[dict[str, str]] = []
     files = [path for path in ROOT.rglob("*") if path.is_file() and ".git" not in path.parts]
     for path in files:
         rel = path.relative_to(ROOT).as_posix()
         if path.suffix.lower() in FORBIDDEN_EXTENSIONS:
-            errors.append(f"forbidden binary/document extension: {rel}")
+            findings.append(finding("PUBLIC-VERIFY-001", "critical", rel, "forbidden binary/document extension", "Remove the artifact from the public release."))
         if "__pycache__" in path.parts:
-            errors.append(f"python cache copied: {rel}")
+            findings.append(finding("PUBLIC-VERIFY-002", "major", rel, "Python cache copied", "Remove generated cache files and add them to .gitignore."))
         if path.stat().st_size > 2_000_000:
-            errors.append(f"large file over 2MB: {rel}")
+            findings.append(finding("PUBLIC-VERIFY-003", "major", rel, "file exceeds 2 MB", "Keep only compact source, fixtures, and documentation in the public package."))
         if path.suffix.lower() in TEXT_EXTENSIONS:
             text = path.read_text(encoding="utf-8", errors="ignore")
             for pattern in SECRET_PATTERNS:
                 if pattern.search(text):
-                    errors.append(f"secret-like or local-path pattern {pattern.pattern}: {rel}")
-    print(f"checked_files={len(files)}")
-    print(f"errors={len(errors)}")
-    for error in errors:
-        print(error)
-    return 1 if errors else 0
+                    findings.append(finding("PUBLIC-VERIFY-004", "critical", rel, f"secret-like or local-path pattern: {pattern.pattern}", "Remove the value or local path before release."))
+    findings.sort(key=lambda item: (item["file"], item["rule_id"], item["evidence"]))
+    print(json.dumps({"summary": {"rule_set": "public_release", "checked_files": len(files), "finding_count": len(findings)}, "findings": findings}, ensure_ascii=False, indent=2))
+    return 1 if findings else 0
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 # Local Usage
 
-这份指南面向希望把公开仓库中的两个 skill 安装到本机 Codex skills 目录的用户。
+这份指南面向希望把公开仓库中的六个 4.0 skill 安装到本机 Codex skills 目录的用户。
 
 ## 一键安装
 
@@ -12,8 +12,12 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install_skills.ps1
 
 安装目标：
 
-- `paper-research-cn-core` -> `%USERPROFILE%\.codex\skills\paper-research-cn-core`
-- `paper-review-cn-core` -> `%USERPROFILE%\.codex\skills\paper-review-cn-core`
+- `paper-research-cn-core`：研究证据与文献分层
+- `paper-manuscript-cn-core`：中文核心文稿、排版与渲染
+- `paper-figures-cn-core`：图表、题注与图文一致性
+- `paper-references-cn-core`：GB/T 7714 与官方元数据核验
+- `paper-review-cn-core`：三轮独立审稿与修订闭环
+- `paper-submission-cn-core`：投稿终审与发布门禁
 
 ## 在 Codex 中调用
 
@@ -32,20 +36,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install_skills.ps1
 ## 阶段整理
 
 ```powershell
-python .\paper-research-skill-v0.3.0\skills\paper-research-cn-core\scripts\tidy_project_structure.py C:\path\to\paper-project
-python .\paper-research-skill-v0.3.0\skills\paper-research-cn-core\scripts\deep_structure_audit.py C:\path\to\paper-project
+python .\paper-research-skill-v0.4.0\install.py --target codex --dry-run
+python .\paper-research-skill-v0.4.0\install.py --target codex --force
 ```
 
-确认目标路径无误后再执行：
-
-```powershell
-python .\paper-research-skill-v0.3.0\skills\paper-research-cn-core\scripts\tidy_project_structure.py C:\path\to\paper-project --apply
-```
-
-## 本地私有记忆
-
-记忆目录默认在 `%USERPROFILE%\.codex\paper-research-cn-core\memory`。公开仓库不保存任何个人记忆。
-
-```powershell
-python .\paper-research-skill-v0.3.0\skills\paper-research-cn-core\scripts\memory_update.py --review
-```
+首先审阅 dry-run；只有确认六个目标 skill 正确后再使用 `--force` 覆盖同名旧版本。公开仓库不保存任何个人记忆、论文材料或下载全文。

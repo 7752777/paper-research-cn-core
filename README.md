@@ -22,14 +22,12 @@
 
 | 模块 | 路径 | 作用 |
 | --- | --- | --- |
-| 写作 skill | `paper-research-skill-v0.3.0/skills/paper-research-cn-core` | 选题、CNKI 检索规划、文献台账、研究设计、项目整理、正文写作、投稿前审计、发布 gate 与本地记忆规则 |
-| 审稿 skill | `paper-research-skill-v0.3.0/skills/paper-review-cn-core` | 三轮独立审稿、修订矩阵、方法/证据复核、去工程化检查、反过度道歉 |
-| 写作 agent 描述 | `paper-research-skill-v0.3.0/skills/paper-research-cn-core/agents/openai.yaml` | 面向中文核心论文写作流水线的默认 agent 名称与启动提示 |
-| 审稿 agent 描述 | `paper-research-skill-v0.3.0/skills/paper-review-cn-core/agents/openai.yaml` | 面向中文核心三轮审稿的默认 agent 名称与启动提示 |
-| 项目整理脚本 | `paper-research-skill-v0.3.0/skills/paper-research-cn-core/scripts/tidy_project_structure.py` | 对论文项目做 dry-run/apply 式结构归位、规范命名和整理 manifest |
-| 深层结构审计 | `paper-research-skill-v0.3.0/skills/paper-research-cn-core/scripts/deep_structure_audit.py` | 扫描活跃区压缩包、缓存、虚拟环境和过深嵌套 |
-| 记忆更新脚本 | `paper-research-skill-v0.3.0/skills/paper-research-cn-core/scripts/memory_update.py` | 管理本地私有偏好、失败模式和可复用经验候选 |
-| 发布审计脚本 | `scripts/privacy_scan.py`, `scripts/release_gate.py` | 检查公开仓库是否混入本地路径、凭据、二进制论文材料或发布禁区内容 |
+| 研究证据 skill | `paper-research-skill-v0.4.0/skills/paper-research-cn-core` | 检索协议、分层台账、期刊层级核验、编码和数字闭合 |
+| 文稿排版 skill | `paper-research-skill-v0.4.0/skills/paper-manuscript-cn-core` | doc.json、章节契约、文风审计与 Word/PDF 渲染 |
+| 图表 skill | `paper-research-skill-v0.4.0/skills/paper-figure-cn-core` | 证据图谱、机制图、三线表、题注与矢量源图审计 |
+| 参考文献 skill | `paper-research-skill-v0.4.0/skills/paper-reference-cn-core` | GB/T 7714、DOI 核验、去重和题录审计 |
+| 审稿修订 skill | `paper-research-skill-v0.4.0/skills/paper-review-cn-core` | 中文三轮审稿、反橡皮图章规则和修订矩阵闭环 |
+| 投稿终审 skill | `paper-research-skill-v0.4.0/skills/paper-submission-cn-core` | 汇总证据、图表、参考文献、渲染和审稿门禁 |
 
 ## 工作流
 

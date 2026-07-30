@@ -1,0 +1,11 @@
+{
+  "flow": {
+    "identified": 12,
+    "excluded": {"duplicates": 1},
+    "outputs": {"main": 8, "supplement": 2, "comparison": 1}
+  },
+  "dimensions": [
+    {"name": "主题", "total": 8, "denominator": 8, "multiple": false},
+    {"name": "治理环节", "total": 14, "denominator": 8, "multiple": true}
+  ]
+}
