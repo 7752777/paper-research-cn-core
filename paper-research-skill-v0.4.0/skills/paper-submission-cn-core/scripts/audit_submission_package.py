@@ -108,7 +108,7 @@ def audit(payload: dict[str, object], base_dir: Path) -> list[dict[str, str]]:
                 findings.append(finding("SUB-PACK-AUDIT-003", "critical", str(path), f"malformed finding in {name}: missing={missing}; severity={severity or '<empty>'}", "Every finding must carry rule_id, severity, file, evidence, and remediation."))
                 continue
             if severity in BLOCKING:
-                findings.append(finding("SUB-PACK-002", "critical", str(item["file"]), f"unresolved {item['rule_id']} from {name}", "Resolve the upstream Critical or Major finding, regenerate its report, then rerun the final gate."))
+                findings.append(finding("SUB-PACK-002", "critical", str(item["file"]), f"unresolved {item['rule_id']} from {name}: {item['evidence']}", "Resolve the upstream Critical or Major finding, regenerate its report, then rerun the final gate."))
     return findings
 
 

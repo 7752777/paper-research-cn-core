@@ -68,6 +68,7 @@ class ReleaseGateTests(unittest.TestCase):
 
             findings = submission.audit({"artifacts": artifact_paths, "audit_reports": report_paths}, root)
         self.assertTrue(any(item["rule_id"] == "SUB-PACK-002" for item in findings))
+        self.assertTrue(any("unresolved evidence gap" in item["evidence"] for item in findings))
 
     def test_review_audit_requires_real_per_round_evidence(self) -> None:
         from audit_review_output import audit_review
