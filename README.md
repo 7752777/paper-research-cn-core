@@ -12,6 +12,10 @@
 
 这个公开仓库只发布通用 workflow、skill、agent 描述、空模板和辅助脚本；不包含私人论文项目、CNKI 下载全文、投稿材料、审稿记录、机构信息、账号信息或任何凭据。
 
+## 5.0 更新
+
+5.0 将原先六个拆分 skill 合并为唯一的 `$paper-research-cn-core`。检索证据、文稿渲染、图表、GB/T 7714、中文审稿和投稿终审仍全部保留，但今后只安装、调用和维护一个目录。
+
 ## 适合谁
 
 - 需要写中文核心、CSSCI、北大核心、AMI 或高水平中文期刊论文的研究者。
@@ -22,12 +26,7 @@
 
 | 模块 | 路径 | 作用 |
 | --- | --- | --- |
-| 研究证据 skill | `paper-research-skill-v0.4.0/skills/paper-research-cn-core` | 检索协议、分层台账、期刊层级核验、编码和数字闭合 |
-| 文稿排版 skill | `paper-research-skill-v0.4.0/skills/paper-manuscript-cn-core` | doc.json、章节契约、文风审计与 Word/PDF 渲染 |
-| 图表 skill | `paper-research-skill-v0.4.0/skills/paper-figure-cn-core` | 证据图谱、机制图、三线表、题注与矢量源图审计 |
-| 参考文献 skill | `paper-research-skill-v0.4.0/skills/paper-reference-cn-core` | GB/T 7714、DOI 核验、去重和题录审计 |
-| 审稿修订 skill | `paper-research-skill-v0.4.0/skills/paper-review-cn-core` | 中文三轮审稿、反橡皮图章规则和修订矩阵闭环 |
-| 投稿终审 skill | `paper-research-skill-v0.4.0/skills/paper-submission-cn-core` | 汇总证据、图表、参考文献、渲染和审稿门禁 |
+| 全流程单体 skill | `paper-research-skill-v0.5.0/skills/paper-research-cn-core` | 检索、台账、文稿、图表、GB/T 7714、中文审稿、投稿终审与发布门禁 |
 
 ## 工作流
 
@@ -60,7 +59,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install_skills.ps1
 ```
 
 ```text
-使用 $paper-review-cn-core 对这篇中文论文做三轮独立审稿，输出修订矩阵，重点检查贡献、文献、方法、证据、图表、引用和去工程化表达。
+使用 $paper-research-cn-core 对这篇中文论文完成三轮独立审稿与投稿终审，输出修订矩阵，重点检查贡献、文献、方法、证据、图表、引用和去工程化表达。
 ```
 
 ## 设计原则

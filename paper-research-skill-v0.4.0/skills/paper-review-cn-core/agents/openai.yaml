@@ -1,6 +1,0 @@
-interface:
-  display_name: "中文论文审稿修订"
-  short_description: "三轮独立中文审稿与修订矩阵闭环。"
-  default_prompt: "Use $paper-review-cn-core to review a Chinese manuscript in three evidence-based rounds."
-policy:
-  allow_implicit_invocation: true

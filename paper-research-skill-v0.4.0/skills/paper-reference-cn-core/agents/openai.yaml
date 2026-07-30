@@ -1,6 +1,0 @@
-interface:
-  display_name: "中文论文参考文献"
-  short_description: "GB/T 7714、DOI 核验与题录去重。"
-  default_prompt: "Use $paper-reference-cn-core to verify and audit Chinese journal references."
-policy:
-  allow_implicit_invocation: true

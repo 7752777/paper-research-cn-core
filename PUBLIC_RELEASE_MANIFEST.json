@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-31T02:08:04",
-  "source_commit": "23f015f948b10afee31eeda37fb8cc2ca0528562",
+  "generated_at": "2026-07-31T03:21:33",
+  "source_commit": "edc0d4c33d6cf2a08901002a735105bf5f440304",
   "allowlist_dirs": [
-    "paper-research-skill-v0.4.0"
+    "paper-research-skill-v0.5.0"
   ],
   "generated_files": [
     ".editorconfig",
@@ -33,6 +33,6 @@
     ".pyo",
     ".tmp"
   ],
-  "policy_version": "public-skill-only-v4",
+  "policy_version": "public-skill-only-v5",
   "policy": "Skill/workflow only; no private papers, full texts, submissions, credentials, local paths, archives, or personal memory."
 }

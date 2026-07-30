@@ -1,0 +1,6 @@
+interface:
+  display_name: "中文核心论文全流程"
+  short_description: "从检索证据到投稿终审的一体化论文工作流。"
+  default_prompt: "Use $paper-research-cn-core to plan, draft, audit, review, and finalize a traceable Chinese core-journal paper."
+policy:
+  allow_implicit_invocation: true

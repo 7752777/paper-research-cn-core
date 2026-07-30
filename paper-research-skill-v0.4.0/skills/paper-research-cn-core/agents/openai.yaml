@@ -1,6 +1,0 @@
-interface:
-  display_name: "中文论文研究证据"
-  short_description: "检索、分层台账、编码和证据图谱审计。"
-  default_prompt: "Use $paper-research-cn-core to build and audit a traceable Chinese literature evidence ledger."
-policy:
-  allow_implicit_invocation: true

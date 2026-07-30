@@ -1,17 +1,12 @@
 # Skills And Agents
 
-本仓库公开六个可组合的 4.0 skill。它们不含私人论文材料、全文或审稿记录，只提供可复用 workflow、脚本与合成 fixture。
+本仓库公开一个 5.0 全流程 skill。它不含私人论文材料、全文或审稿记录，只提供可复用 workflow、脚本与合成 fixture。
 
 ## Skill Reference
 
 | 名称 | 触发场景 | 主要产出 |
 | --- | --- | --- |
-| `paper-research-cn-core` | 选题、CNKI 检索规划、分层文献台账与研究证据 | 检索协议、证据台账、纳排与分层审计 |
-| `paper-manuscript-cn-core` | 中文核心文稿撰写、版式与渲染检查 | 文稿、`doc.json`、Word/PDF 渲染记录 |
-| `paper-figures-cn-core` | 图表、题注、分母和多重编码限制核验 | 图表清单、题注审计、适配报告 |
-| `paper-references-cn-core` | GB/T 7714 与期刊/DOI 官方元数据核验 | 参考文献表、元数据核验结果 |
-| `paper-review-cn-core` | 三轮中文独立审稿、重大修改后复审 | 审稿意见、严重度分级、修订矩阵 |
-| `paper-submission-cn-core` | 投稿终审、结构化审计聚合与发布门禁 | 门禁报告、阻断项和可追溯修复建议 |
+| `paper-research-cn-core` | 从选题、CNKI 检索、证据台账到文稿、图表、参考文献、审稿和投稿终审 | 全流程工件、结构化审计、修订矩阵和门禁报告 |
 
 ## 推荐协作方式
 
